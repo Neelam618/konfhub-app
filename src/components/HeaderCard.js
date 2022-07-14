@@ -1,10 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import SearchForm from './SearchForm'
 
 function HeaderCard() {
     return (
-        <Container>
-            <div style={{ display: 'flex', alignItems: 'center', background: '#FFDBA6' }}>
+        <Container style={{ background: '#FFDBA6', position: 'relative' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div>
                     <img src="/images/Events.png" alt="Events" />
                     <p>
@@ -12,9 +13,10 @@ function HeaderCard() {
                     </p>
                 </div>
                 <div>
-                    <img src="/images/hero-image.jpg" alt="Octopus holding a mic" />
+                    <img src="/images/events-header.png" alt="Octopus holding a mic" />
                 </div>
             </div>
+            <SearchForm />
         </Container>
     )
 }
