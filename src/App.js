@@ -6,14 +6,15 @@ import EventList from './components/EventList'
 function App() {
   const [eventList, setEventList] = useState([])
   const [query, setQuery] = useState("")
+  const [isPastEvent, setIsPastEvent] = useState(true)
   let filteredEvents = []
 
   useEffect(() => {
     getEvents()
-  }, [])
+  }, [isPastEvent])
 
   const getEvents = () => {
-    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}`)
+    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isPastEvent}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -34,7 +35,7 @@ function App() {
   return (
     <div>
       <MyNavbar />
-      <Header query={query} setQuery={setQuery} handleSearch={handleSearch} />
+      <Header query={query} setQuery={setQuery} handleSearch={handleSearch} isPastEvent={isPastEvent} setIsPastEvent={setIsPastEvent} />
       <EventList filteredEvents={filteredEvents} eventList={eventList} />
     </div>
   );
