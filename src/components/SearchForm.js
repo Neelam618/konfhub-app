@@ -1,24 +1,23 @@
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function SearchForm() {
+function SearchForm({ query, handleSearch }) {
     return (
         <div style={{ width: '597px', position: 'absolute', bottom: '-33px', left: 0, right: 0, margin: '0 auto', background: '#ffffff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid' }}>
             <div style={{ width: '100%' }} className="me-3">
-                <Form.Label>Search</Form.Label>
-                <InputGroup>
-                    <Form.Control
-                        aria-label="Search"
-                    />
-                </InputGroup>
+                <label class="form-label">Search</label>
+                <div class="input-group">
+                    <input value={query} onChange={handleSearch} type="text" class="form-control" aria-label="search" />
+                </div>
+
             </div>
             <div style={{ width: '60%' }}>
-                <Form.Label>Past Events</Form.Label>
-                <Form.Select aria-label="Select past events">
-                    <option>Select Type</option>
-                    <option value="1">True</option>
-                    <option value="2">False</option>
-                </Form.Select>
+                <label class="form-label">Past Events</label>
+                <select class="form-select" aria-label="Select past events">
+                    <option selected>Open this select menu</option>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
             </div>
 
         </div>

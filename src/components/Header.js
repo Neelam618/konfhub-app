@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import SearchForm from './SearchForm'
 
-function Header() {
+function Header({ query, setQuery, handleSearch }) {
     return (
         <>
             <Container style={{ background: '#FFDBA6', position: 'relative' }}>
@@ -17,7 +17,7 @@ function Header() {
                         <img src="/images/events-header.png" alt="Octopus holding a mic" />
                     </div>
                 </div>
-                <SearchForm />
+                <SearchForm query={query} setQuery={setQuery} handleSearch={handleSearch} />
             </Container>
         </>
     )
