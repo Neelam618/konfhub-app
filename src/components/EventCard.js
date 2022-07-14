@@ -1,14 +1,14 @@
 import React from 'react'
 
-function EventCard() {
+function EventCard({ eventItem }) {
     return (
-        <div class="card" style={{ width: '18rem' }}>
+        <div class="card" style={{ width: '18rem', height: '287px', margin: '10px 0', border: '1px solid' }}>
             <img src="/images/card-image.png" class="card-img-top" alt="..." />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{eventItem.name}</h5>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>Raddison Blue</div>
-                    <div><span>Free</span> | <span>Online</span></div>
+                    <div><span>{eventItem.is_free ? 'Free' : 'Paid'}</span> | <span>{eventItem.is_virtual ? 'Online' : 'Offline'}</span></div>
                 </div>
             </div>
         </div>

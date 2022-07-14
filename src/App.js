@@ -15,7 +15,7 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setEventList(data)
+        setEventList(data.events)
       });
   }
 
@@ -23,7 +23,7 @@ function App() {
     <div>
       <MyNavbar />
       <Header />
-      <EventList />
+      <EventList eventList={eventList} />
     </div>
   );
 }

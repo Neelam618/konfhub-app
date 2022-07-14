@@ -1,11 +1,25 @@
 import React from 'react'
 import EventCard from './EventCard'
 
-function EventList() {
+function EventList({ eventList }) {
     return (
-        <div>
+        <div className='container'>
             <h3>250+ Events</h3>
-            <EventCard />
+
+            <div className="row row-cols-auto justify-content-center" style={{ columnGap: '24px' }}>
+                {
+                    eventList.map(eventItem => {
+                        return (
+                            <div className="col">
+                                <EventCard eventItem={eventItem} />
+                            </div>
+                        )
+                    })
+                }
+            </div>
+
+
+
         </div>
     )
 }
