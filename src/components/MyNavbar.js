@@ -8,9 +8,9 @@ function MyNavbar() {
             <Container>
                 <Navbar.Brand href="#home">
                     <img
-                        src="/logo.jpg"
+                        src="/images/logo.jpg"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
+                        alt="Logo"
                         height="50"
                     />
                 </Navbar.Brand>
