@@ -1,6 +1,3 @@
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-
 function SearchForm({ query, handleSearch, isPastEvent, setIsPastEvent }) {
 
     const handleSelectChange = (e) => {

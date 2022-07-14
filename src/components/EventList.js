@@ -5,7 +5,6 @@ function EventList({ filteredEvents }) {
     return (
         <div className='container'>
             <h3>250+ Events</h3>
-
             <div className="row row-cols-auto justify-content-center" style={{ columnGap: '24px' }}>
                 {
                     filteredEvents.map(eventItem => {
@@ -17,9 +16,6 @@ function EventList({ filteredEvents }) {
                     })
                 }
             </div>
-
-
-
         </div>
     )
 }
