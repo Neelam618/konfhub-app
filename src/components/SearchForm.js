@@ -9,6 +9,7 @@ function SearchForm({ query, handleSearch, isPastEvent, setIsPastEvent }) {
                 <label class="form-label" style={{ fontWeight: 'bold' }}>Search</label>
                 <div class="input-group">
                     <input value={query} onChange={handleSearch} type="text" class="form-control" aria-label="search" />
+                    <span style={{ position: 'absolute', right: '10px', top: '5px' }}><img src="/images/search.svg" alt="" /></span>
                 </div>
 
             </div>
