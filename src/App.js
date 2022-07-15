@@ -14,7 +14,7 @@ function App() {
   }, [isPastEvent])
 
   const getEvents = () => {
-    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isPastEvent}`)
+    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isPastEvent}&limit=12`)
       .then(response => response.json())
       .then(data => {
         console.log(data)

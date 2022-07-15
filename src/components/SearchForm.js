@@ -16,7 +16,7 @@ function SearchForm({ query, handleSearch, isPastEvent, setIsPastEvent }) {
             <div style={{ width: '60%' }}>
                 <label class="form-label" style={{ fontWeight: 'bold' }}>Past Events</label>
                 <select value={isPastEvent} onChange={handleSelectChange} class="form-select" aria-label="Select past events">
-                    <option selected>Select Type</option>
+                    <option>Select Type</option>
                     <option value="true">True</option>
                     <option value="false">False</option>
                 </select>
