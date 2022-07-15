@@ -10,8 +10,8 @@ function EventCard({ eventItem }) {
                     <h5 class="card-title">{eventItem.name}</h5>
                 </div>
                 <div className='d-flex justify-content-between align-items-center'>
-                    <div className='card-bottom'><img src='/images/u_podium.svg' alt='' className='me-1 align-bottom' />Raddison Blue</div>
-                    <div className='card-bottom'><img src="/images/info.svg" className='me-1 align-bottom' />{eventItem.is_free ? 'Free' : 'Paid'} | {eventItem.is_virtual ? 'Online' : 'Offline'}</div>
+                    <div className='card-bottom'><img src='/images/u_podium.svg' alt='podium' className='me-1 align-bottom' />Raddison Blue</div>
+                    <div className='card-bottom'><img src="/images/info.svg" alt='info' className='me-1 align-bottom' />{eventItem.is_free ? 'Free' : 'Paid'} | {eventItem.is_virtual ? 'Online' : 'Offline'}</div>
                 </div>
             </div>
         </div>

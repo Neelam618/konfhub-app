@@ -12,17 +12,17 @@ function App() {
   let filteredEvents = []
 
   useEffect(() => {
+    const getEvents = () => {
+      fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isEventPast}&limit=${limit}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          setEventList(data.events)
+        });
+    }
     getEvents()
-  }, [isEventPast, limit])
+  }, [isEventPast, limit, query])
 
-  const getEvents = () => {
-    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isEventPast}&limit=${limit}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        setEventList(data.events)
-      });
-  }
 
   const handleSearch = (e) => {
     setQuery(e.target.value)
