@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import MyNavbar from './components/MyNavbar';
 import Header from './components/Header'
 import EventList from './components/EventList'
+import './styles.css'
 
 function App() {
   const [eventList, setEventList] = useState([])
