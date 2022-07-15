@@ -7,7 +7,7 @@ import './styles.css'
 function App() {
   const [eventList, setEventList] = useState([])
   const [query, setQuery] = useState("")
-  const [isEventPast, setIsEventPast] = useState(true)
+  const [isEventPast, setIsEventPast] = useState(null)
   const [limit, setLimit] = useState(12)
   let filteredEvents = []
 

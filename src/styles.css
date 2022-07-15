@@ -46,6 +46,18 @@
 }
 
 
+select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
 @media screen and (max-width: 1200px) {
     .header-form {
         width: 580px;
