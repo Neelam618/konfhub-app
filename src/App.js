@@ -7,15 +7,15 @@ import './styles.css'
 function App() {
   const [eventList, setEventList] = useState([])
   const [query, setQuery] = useState("")
-  const [isPastEvent, setIsPastEvent] = useState(true)
+  const [isEventPast, setIsEventPast] = useState(true)
   let filteredEvents = []
 
   useEffect(() => {
     getEvents()
-  }, [isPastEvent])
+  }, [isEventPast])
 
   const getEvents = () => {
-    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isPastEvent}&limit=12`)
+    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isEventPast}&limit=12&offset=0`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <MyNavbar />
-      <Header query={query} setQuery={setQuery} handleSearch={handleSearch} isPastEvent={isPastEvent} setIsPastEvent={setIsPastEvent} />
+      <Header query={query} setQuery={setQuery} handleSearch={handleSearch} isEventPast={isEventPast} setIsEventPast={setIsEventPast} />
       <EventList filteredEvents={filteredEvents} eventList={eventList} />
     </div>
   );

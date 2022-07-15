@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchForm from './SearchForm'
 
-function Header({ query, setQuery, handleSearch, isPastEvent, setIsPastEvent }) {
+function Header({ query, setQuery, handleSearch, isEventPast, setIsEventPast }) {
     return (
         <>
             <div className='container' style={{ background: '#FFDBA6', position: 'relative', borderRadius: 50, padding: 41 }}>
@@ -16,7 +16,7 @@ function Header({ query, setQuery, handleSearch, isPastEvent, setIsPastEvent }) 
                         <img src="/images/events-header.png" alt="Octopus holding a mic" />
                     </div>
                 </div>
-                <SearchForm query={query} setQuery={setQuery} handleSearch={handleSearch} isPastEvent={isPastEvent} setIsPastEvent={setIsPastEvent} />
+                <SearchForm query={query} setQuery={setQuery} handleSearch={handleSearch} isEventPast={isEventPast} setIsEventPast={setIsEventPast} />
             </div>
         </>
     )

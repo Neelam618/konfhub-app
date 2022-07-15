@@ -1,7 +1,7 @@
 import React from 'react'
 import EventCard from './EventCard'
 
-function EventList({ filteredEvents }) {
+function EventList({ filteredEvents, handleLoadMore }) {
     return (
         <div className='container' style={{ margin: '6em auto 2em auto' }}>
             <h3 className='mb-4'>250+ Events</h3>
@@ -16,6 +16,7 @@ function EventList({ filteredEvents }) {
                     })
                 }
             </div>
+            {/* <button className='btn' onClick={() => handleLoadMore}>Load More</button> */}
         </div>
     )
 }
