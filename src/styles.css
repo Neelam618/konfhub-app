@@ -1,3 +1,7 @@
+#search-input.form-control {
+    border-radius: 0.25rem;
+}
+
 .card-title {
     overflow: hidden;
     display: -webkit-box;
