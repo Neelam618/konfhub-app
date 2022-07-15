@@ -16,7 +16,9 @@ function EventList({ filteredEvents, loadMore }) {
                     })
                 }
             </div>
-            <button className='btn btn-secondary' type='button' onClick={loadMore}>Load More</button>
+            <div className='btn-wrapper d-flex justify-content-center align-items-center mt-5'>
+                <button className='load-more btn btn-outline-secondary' type='button' onClick={loadMore}>Load More</button>
+            </div>
         </div>
     )
 }
