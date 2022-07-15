@@ -8,14 +8,15 @@ function App() {
   const [eventList, setEventList] = useState([])
   const [query, setQuery] = useState("")
   const [isEventPast, setIsEventPast] = useState(true)
+  const [limit, setLimit] = useState(12)
   let filteredEvents = []
 
   useEffect(() => {
     getEvents()
-  }, [isEventPast])
+  }, [isEventPast, limit])
 
   const getEvents = () => {
-    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isEventPast}&limit=12&offset=0`)
+    fetch(`https://manage-api.konfhub.com/hosted-events?search_query=${query}&past_events=${isEventPast}&limit=${limit}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -25,6 +26,10 @@ function App() {
 
   const handleSearch = (e) => {
     setQuery(e.target.value)
+  }
+
+  const loadMore = () => {
+    setLimit(limit + 12)
   }
 
   if (query === "") {
@@ -37,7 +42,7 @@ function App() {
     <div>
       <MyNavbar />
       <Header query={query} setQuery={setQuery} handleSearch={handleSearch} isEventPast={isEventPast} setIsEventPast={setIsEventPast} />
-      <EventList filteredEvents={filteredEvents} eventList={eventList} />
+      <EventList filteredEvents={filteredEvents} eventList={eventList} loadMore={loadMore} />
     </div>
   );
 }
